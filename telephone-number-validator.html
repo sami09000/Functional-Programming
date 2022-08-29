@@ -1,0 +1,15 @@
+//I coded US Telephone Number Validator program using the concept of Regular Expressions.
+
+function telephoneCheck(str) 
+{
+   const validUSNumber = [/^\d{3}-\d{3}-\d{4}$/,
+                        /^\(\d{3}\)\d{3}-\d{4}$/,
+                        /^1 \d{3}-\d{3}-\d{4}$/,
+                      /^1 \(\d{3}\) \d{3}-\d{4}$/,
+                              /^\d{10}$/,
+                        /1\(\d{3}\)\d{3}-\d{4}/,
+                        /^1 \d{3} \d{3} \d{4}$/,
+                          ];
+  return validUSNumber.some((pattern) => pattern.test(str));
+}
+telephoneCheck("555-555-5555");
